@@ -1,0 +1,181 @@
+@charset "utf-8";
+@import url("./normalize.css");
+@import url("./reset.css");
+@import url("./fonts.css");
+
+/* Reset css */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* 숨김 콘텐츠 */
+
+legend, .readable-hidden {
+  position: absolute;
+  font-size: 0;
+  line-height: 0;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  margin: -1px;
+  clip: rect(0, 0, 0, 0);
+  background: red;
+}
+
+/* 기본 스타일 */
+
+html {
+  font-size: 10px;
+}
+body {
+  font-family: "Noto Sans Regular", sans-serif;
+  color: #181818;
+  background-color: #fff;
+  font-size: 1.6rem;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+a:hover, a:focus {
+  color: #f00;
+}
+
+/* 레이아웃 공통 */
+
+.header, .main-menu, .main-contents, .slogan, .footer {
+  width: 1000px;
+  margin: 0 auto;
+}
+
+/*=============================================
+=                  헤더 시작                   =
+=============================================*/
+
+.header {
+  background-color: goldenrod;
+  min-height: 100px;
+  display: grid;
+  /* grid-template-columns: 50% 50%;
+  grid-template-rows: 50% 50%; */
+  grid-template: 50% 50% / 50% 50%;
+  /* grid-template-areas: "member     logo" "search     logo"; */
+  grid-template-areas: "logo     member" "logo     search";
+}
+
+/*----------  로고  ----------*/
+
+.logo {
+  /* grid-row: 1 / 3; */
+  grid-area: logo;
+  align-self: center;
+  margin-left: 20px;
+}
+
+/*----------  멤버 링크  ----------*/
+
+.member {
+  /* grid-column: 2 / 3; */
+  grid-area: member;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+.member a {
+  display: block;
+  padding: 10px;
+  margin-left: 10px;
+}
+
+/*----------  검색 폼  ----------*/
+
+.search-form {
+  /* grid-area: 2 / 2 / 3 / 3; */
+  grid-area: search;
+  align-self: center;
+  text-align: right;
+}
+.search, .btn-search {
+  border: 1px solid #aaa;
+  border-radius: 5px;
+  padding: 3px 12px;
+}
+.search {
+  width: 400px;
+}
+.btn-search {
+  color: #fff;
+  background: #988574;
+}
+
+/*===========-==== 헤더 종료 =================*/
+
+
+/* 메인 메뉴 */
+
+.navigation {
+  background-color: pink;
+}
+.main-menu {
+  background-color: teal;
+}
+
+/* 메인 콘텐츠 */
+
+.main-contents {
+  background-color: lime;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.main-contents>div {
+  background-color: orangered;
+  padding: 0 20px
+}
+
+/* 추천 서적 */
+
+.recommend-book {
+  width: 350px;
+}
+
+/* 뉴스 */
+
+.news {
+  width: 650px;
+}
+
+/* 게시판 */
+
+.board {
+  width: 350px
+}
+
+/* 인기 사이트 */
+
+.favorite-site {
+  width: 250px;
+  order: 1;
+}
+
+/* 트위터 */
+
+.twitter {
+  width: 400px;
+}
+
+/* 슬로건 */
+
+.slogan {
+  background-color: skyblue;
+}
+
+/* 푸터 */
+
+.footer-bg {
+  background-color: purple;
+}
+.footer {
+  background-color: orange;
+}
